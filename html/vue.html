@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vue 3 Demo</title>
+    <style>
+    </style>
+    <script type="text/javascript" src="./js/vue.global.js"></script>
+</head>
+<body>
+    <div id="counter">
+        <div>
+        Counter: {{ counter }}
+        </div>
+        <div>
+            <button v-on:click="stopIt">Stop It</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+    const Counter = {
+        data() {
+            return {
+                counter: 0,
+                handler: null
+            }
+        },
+        mounted() {
+            this.handler = setInterval(this.updateCounter, 1000)
+        },
+        methods: {
+            updateCounter() {
+                this.counter++
+            },
+            stopIt() {
+                clearInterval(this.handler)
+            }
+        }
+    }
+    Vue.createApp(Counter).mount('#counter')
+    </script>
+</body>
+</html>

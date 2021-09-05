@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>新页面</title>
+    <style>
+      body {
+        background: #FFFFFF;
+        margin: 10px;
+      }
+      div {
+      	margin: 50px;
+      }
+    </style>
+    <script type="text/javascript">
+    	function click_p() {
+    		var p = document.getElementById("me")
+    		var newp = document.createElement("p")
+    		newp.innerText = "我是新节点"
+    		p.parentElement.appendChild(newp)
+    	}
+    </script>
+</head>
+<body>
+	<h1>新页面</h1>
+	<div>
+		<p id="me" onclick="click_p()">这是一个新的段落&gt;&lt;</p>
+	</div>
+</body>
+</html>
